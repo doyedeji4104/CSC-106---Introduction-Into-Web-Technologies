@@ -1,0 +1,232 @@
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap');
+
+:root {
+    --primary-color: #111;
+    --secondary-color: #fff;
+    --accent-color: #888;
+    --bg-light: #f9f9f9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Jost', sans-serif;
+}
+
+body {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s;
+}
+
+a:hover { color: var(--accent-color); }
+
+/* --- HEADER & NAVIGATION --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav ul li a {
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.header-icons span {
+    margin-left: 15px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* --- HERO SECTION (Home) --- */
+.hero {
+    height: 80vh;
+    background: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2070&auto=format&fit=crop') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 50px;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 12px 30px;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: var(--accent-color);
+}
+
+/* --- LAYOUT STRUCTURES --- */
+.container {
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+/* --- GRID LAYOUTS (Shop, Lookbook, Blog) --- */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.product-card, .blog-card {
+    text-align: center;
+}
+
+.product-card img, .blog-card img, .lookbook-img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.product-card p {
+    color: var(--accent-color);
+    margin-top: 5px;
+}
+
+/* --- SINGLE PRODUCT --- */
+.single-product {
+    display: flex;
+    gap: 50px;
+}
+.single-product img {
+    flex: 1;
+    width: 100%;
+    object-fit: cover;
+}
+.product-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.product-details h1 { font-size: 30px; margin-bottom: 10px; }
+.product-details .price { font-size: 20px; color: var(--accent-color); margin-bottom: 20px; }
+
+/* --- FORMS (Contact, Checkout) --- */
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    font-family: 'Jost', sans-serif;
+}
+
+/* --- CART --- */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+}
+
+/* --- FOOTER --- */
+footer {
+    background: var(--bg-light);
+    text-align: center;
+    padding: 40px 5%;
+    margin-top: 50px;
+}
+
+footer p {
+    color: var(--accent-color);
+    font-size: 13px;
+}
+
+/* --- RESPONSIVE --- */
+@media(max-width: 768px) {
+    nav ul { display: none; } /* Mobile menu simplified for demo */
+    .single-product { flex-direction: column; }
+}
+
+/* ---  BOARD OF DIRECTORS --- */
+.team-card {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.team-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    filter: grayscale(100%); /* Sleek fashion look */
+    transition: filter 0.4s ease;
+}
+
+.team-card:hover img {
+    filter: grayscale(0%); /* Color returns on hover */
+}
+
+.team-card h3 {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.team-card p {
+    color: var(--accent-color);
+    font-size: 13px;
+    margin-top: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
